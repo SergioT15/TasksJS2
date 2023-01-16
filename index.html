@@ -1,13 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
+
 <body>
-  
-  <script src="/main.js"></script>
+  <button id="button">hi</button>
+
+  <input id="input" type="text">
+
+  <form>
+    <input id="take" type="text">
+    <button onclick="" id="give">опубликовать</button>
+  </form>
+
+  <script>
+    // Сделать кнопку при клике на которой появится alert "уря!"
+    button.addEventListener("click", () => alert("Уря!")
+    );
+
+    //Сделать инпут который при потере фокуса выдает alert "ждем возвращения"
+    input.addEventListener("blur", () => alert("ждем возвращения"));
+
+    //Сделать поле ввода с кнопкой, при нажатии на которую текст из инпута появляется в кнопке, дефолтный текст кнопки "опубликовать"
+    give.addEventListener("click", function (event) {
+      event.preventDefault();
+      give.textContent = take.value
+      take.value = ""
+    })
+  </script>
 </body>
+
 </html>
